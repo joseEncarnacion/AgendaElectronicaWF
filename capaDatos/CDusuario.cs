@@ -17,10 +17,12 @@ namespace capaDatos
          new SqlConnection(ConfigurationManager.ConnectionStrings["dataConnex"].ConnectionString);
 
 
-        public DataTable Datos_Listar()
+        public DataTable Datos_Listar(CEUsuario US)
         {
             SqlCommand cmd = new SqlCommand("sp_usuario", conn);
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@user", US.UsuarioE);
+            cmd.Parameters.AddWithValue("@pass", US.passE);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

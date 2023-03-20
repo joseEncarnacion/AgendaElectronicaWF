@@ -51,9 +51,9 @@
             this.Cbox_genero = new System.Windows.Forms.ComboBox();
             this.cbox_Ecivil = new System.Windows.Forms.ComboBox();
             this.panel_verRegistro = new System.Windows.Forms.Panel();
+            this.btn_Salir = new System.Windows.Forms.Button();
             this.ver = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btn_AgendarContacto = new System.Windows.Forms.Button();
             this.dataGRegistro = new System.Windows.Forms.DataGridView();
             this.idPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -279,9 +279,10 @@
             // 
             // panel_verRegistro
             // 
+            this.panel_verRegistro.BackColor = System.Drawing.Color.Teal;
+            this.panel_verRegistro.Controls.Add(this.btn_Salir);
             this.panel_verRegistro.Controls.Add(this.ver);
             this.panel_verRegistro.Controls.Add(this.textBox1);
-            this.panel_verRegistro.Controls.Add(this.btnEditar);
             this.panel_verRegistro.Controls.Add(this.btn_AgendarContacto);
             this.panel_verRegistro.Controls.Add(this.dataGRegistro);
             this.panel_verRegistro.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -291,6 +292,16 @@
             this.panel_verRegistro.TabIndex = 24;
             this.panel_verRegistro.Visible = false;
             this.panel_verRegistro.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_verRegistro_Paint);
+            // 
+            // btn_Salir
+            // 
+            this.btn_Salir.Location = new System.Drawing.Point(764, 23);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(149, 41);
+            this.btn_Salir.TabIndex = 5;
+            this.btn_Salir.Text = "Log out";
+            this.btn_Salir.UseVisualStyleBackColor = true;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // ver
             // 
@@ -308,16 +319,6 @@
             this.textBox1.Size = new System.Drawing.Size(279, 27);
             this.textBox1.TabIndex = 3;
             // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.Gold;
-            this.btnEditar.Location = new System.Drawing.Point(313, 635);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(164, 41);
-            this.btnEditar.TabIndex = 2;
-            this.btnEditar.Text = "Editar Registro";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            // 
             // btn_AgendarContacto
             // 
             this.btn_AgendarContacto.BackColor = System.Drawing.Color.LightGreen;
@@ -331,6 +332,7 @@
             // 
             // dataGRegistro
             // 
+            this.dataGRegistro.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dataGRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGRegistro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPersona,
@@ -345,6 +347,7 @@
             this.correo,
             this.eliminar,
             this.editar});
+            this.dataGRegistro.GridColor = System.Drawing.Color.PaleTurquoise;
             this.dataGRegistro.Location = new System.Drawing.Point(12, 191);
             this.dataGRegistro.Name = "dataGRegistro";
             this.dataGRegistro.RowHeadersWidth = 51;
@@ -473,7 +476,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.Turquoise;
             this.ClientSize = new System.Drawing.Size(1006, 753);
             this.Controls.Add(this.textNacimiento);
             this.Controls.Add(this.btn_Editar);
@@ -537,7 +540,6 @@
         private DataGridView dataGRegistro;
         private Button ver;
         private TextBox textBox1;
-        private Button btnEditar;
         private Button btn_AgendarContacto;
         private DataGridViewTextBoxColumn idPersona;
         private DataGridViewTextBoxColumn nombre;
@@ -554,5 +556,6 @@
         private Button btn_Editar;
         private DateTimePicker dateTimePicker1;
         private DateTimePicker textNacimiento;
+        private Button btn_Salir;
     }
 }

@@ -8,16 +8,17 @@ namespace capaPresentacion
     public partial class Pantalla1 : Form
     {
         //variables
-        Form1 formvistaRegistro;
+       // Form1 formvistaRegistro;
         CEagencia entidadPersona = new CEagencia(); 
         CNagencia negPersona = new CNagencia();
         bool existe = false;
         string id = string.Empty;
+        
 
         public Pantalla1()
         {
             InitializeComponent();
-            formvistaRegistro = new Form1();    
+            //formvistaRegistro = new Form1();    
         }
 
 
@@ -142,6 +143,13 @@ namespace capaPresentacion
                 textEmail.Text = dataGRegistro.Rows[e.RowIndex].Cells["correo"].Value.ToString();
 
             }
+        }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            Form1 logins = new Form1();
+            logins.Show();
+            this.Close();
         }
     }
 }
